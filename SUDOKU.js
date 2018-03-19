@@ -53,7 +53,7 @@ var valb6=["8","9","5","6","1"];
 var valb7=["5","2"];
 var valb8=["7","4","5"];
 var valb9=["6","4"];
-var flag=1;
+var flag=1,flag1=1,flag2=1,flag3=1,flagg;
 var x;//value
 var counter=0;
 var idofcell=[];
@@ -66,14 +66,12 @@ $(this).css("backgroundColor","orange")
 $(".button").click(function(){
 x=$(this).val();//value of button
 flag=1;
-
+flag1=1;
+flag2=1;
+flag3=1;
 row();
-if(flag==1){
 column();
-if(flag==1){
 box();
-}
-}
 counter1();
 check();
 idofcell.push(id1);
@@ -208,39 +206,39 @@ check1(valc9);
 
 else{
 	if(jQuery.inArray(id1,idc1)!=-1){
-	check2(valc1);
+	check3(valc1);
 }
 else
 if(jQuery.inArray(id1,idc2)!=-1){
-	check2(valc2);
+	check3(valc2);
 }
 else
 if(jQuery.inArray(id1,idc3)!=-1){
-	check2(valc3);
+	check3(valc3);
 }
 else
 if(jQuery.inArray(id1,idc4)!=-1){
-	check2(valc4);
+	check3(valc4);
 }
 else
 if(jQuery.inArray(id1,idc5)!=-1){
-check2(valc5);
+check3(valc5);
 }
 else
 if(jQuery.inArray(id1,idc6)!=-1){
-	check2(valc6);
+	check3(valc6);
 }
 else
 if(jQuery.inArray(id1,idc7)!=-1){
-	check2(valc7);
+	check3(valc7);
 }
 else
 if(jQuery.inArray(id1,idc8)!=-1){
-	check2(valc8);
+	check3(valc8);
 }
 else
 if(jQuery.inArray(id1,idc9)!=-1){
-	check2(valc9);
+	check3(valc9);
 }
 }
 }
@@ -286,64 +284,81 @@ check1(valb9);
 else
 {
 		if(jQuery.inArray(id1,idb1)!=-1){
-	check2(valb1);
+	check4(valb1);
 }
 else
 if(jQuery.inArray(id1,idb2)!=-1){
-	check2(valb2);
+	check4(valb2);
 }
 else
 if(jQuery.inArray(id1,idb3)!=-1){
-	check2(valb3);
+	check4(valb3);
 }
 else
 if(jQuery.inArray(id1,idb4)!=-1){
-	check2(valb4);
+	check4(valb4);
 }
 else
 if(jQuery.inArray(id1,idb5)!=-1){
-check2(valb5);
+check4(valb5);
 }
 else
 if(jQuery.inArray(id1,idb6)!=-1){
-	check2(valb6);
+	check4(valb6);
 }
 else
 if(jQuery.inArray(id1,idb7)!=-1){
-	check2(valb7);
+	check4(valb7);
 }
 else
 if(jQuery.inArray(id1,idb8)!=-1){
-	check2(valb8);
+	check4(valb8);
 }
 else
 if(jQuery.inArray(id1,idb9)!=-1){
-	check2(valb9);
+	check4(valb9);
 }
 
 }
 } 
 function counter1(){
-	console.log(valb1);
+	
 if(counter>80)
 {
 document.getElementById("body1").innerHTML="completed";
 }
 }
 function check(){
+	if(flagg==1){
 if(flag==1){
 counter++;
 document.getElementById(id1).style.backgroundColor="yellow";
 document.getElementById(id1).innerHTML=x;
 }
-else{
+else if(flag==0)
+{
 document.getElementById(id1).style.backgroundColor="red";
 document.getElementById(id1).innerHTML=x;
+}
+}
+if(flagg==0){
+ 
+	if(flag1==0||flag2==0||flag3==0)
+{
+	document.getElementById(id1).style.backgroundColor="red";
+document.getElementById(id1).innerHTML=x;
+}
+else{
+	counter++;
+document.getElementById(id1).style.backgroundColor="yellow";
+document.getElementById(id1).innerHTML=x;
+}
 }
 }
 
 function check1(val)
 {
+	 flagg=1;
 	if(jQuery.inArray(x,val)==-1)
 {
 val.push(x);
@@ -353,9 +368,38 @@ flag=0;
 }
 }
 function check2(value)
-{ 
+{    flagg=0;
 	var z=document.getElementById(id1).textContent;
 	var x1=(jQuery.inArray(z,value));
 	value.splice(x1,1);
-  value.push(x);
-}
+	if(jQuery.inArray(x,value)==-1){
+  	value.push(x);
+  	
+  }
+  else{
+  	flag1=0;
+}}
+function check3(value)
+{   flagg=0;
+	var z=document.getElementById(id1).textContent;
+	var x1=(jQuery.inArray(z,value));
+	value.splice(x1,1);
+	if(jQuery.inArray(x,value)==-1){
+  	value.push(x);
+  	
+  }
+  else{
+  	flag2=0;
+}}
+function check4(value)
+{   flagg=0;
+	var z=document.getElementById(id1).textContent;
+	var x1=(jQuery.inArray(z,value));
+	value.splice(x1,1);
+	if(jQuery.inArray(x,value)==-1){
+  	value.push(x);
+  	
+  }
+  else{
+  	flag3=0;
+}}
