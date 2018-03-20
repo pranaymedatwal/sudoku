@@ -1,24 +1,28 @@
 td {
-border: 2px solid black;
-height: 50px;
-width: 50px;
- font-size: 30px;
+  border: 2px solid dimgrey;
+  height: 50px;
+  width: 50px;
+  font-size: 30px;
 }
 .cellshow{
-	background-color: green;
-	color:blue;
+	background-color: peachpuff;
+	color:black;
 	 
-}
+  }
 body
 {
-	/*background-image: url("sudoku.png");*/
+	background-image: url("task.jpeg");
 	background-repeat: no-repeat;
 	background-size: cover;
 
 }
 button
 {
-	background-color: black;
+	background-color: darkgrey;
 	height:30px;
 	width:40px;
+}
+.design
+{
+	background-color: grey;
 }

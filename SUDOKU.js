@@ -59,23 +59,23 @@ var counter=0;
 var idofcell=[];
 $(document).ready(function(){
 $(".cell").click(function(){
-id1=$(this).attr("id");
-$(this).css("backgroundColor","orange")
+  id1=$(this).attr("id");
+  $(this).css("backgroundColor","orange")
 
-});
+ });
 $(".button").click(function(){
-x=$(this).val();//value of button
-flag=1;
-flag1=1;
-flag2=1;
-flag3=1;
-row();
-column();
-box();
-counter1();
-check();
-idofcell.push(id1);
-});
+  x=$(this).val();//value of button
+  flag=1;
+  flag1=1;
+  flag2=1;
+  flag3=1;
+  row();
+  column();
+  box();
+  counter1();
+  check();
+  idofcell.push(id1);
+  });
 });
 function row(){
 	if(jQuery.inArray(id1,idofcell)==-1)

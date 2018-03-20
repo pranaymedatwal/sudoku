@@ -9,13 +9,20 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <title>SUDOKU</title>
   </head>
-  <body >
+  <body onload="set();"">
     <div id="body1" class="container">
     <div class="row">
       <div class="col-sm-4">
+        <h1 id="timer"></h1>
       </div>
       <div class="col-sm-4">
-     
+      <div class="row">
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-3">
+          <h1><b>SUDOKU</b></h1>
+        </div>
+      </div>
       <table id="grid">
 
         <tr>
@@ -152,6 +159,7 @@
 </tr>
         
       </table>
+      <b>
       <button id="button1"  class="button" value=1 >1</button>
       <button id="button2" class="button" value=2>2</button>
       <button id="button3" class="button" value=3>3</button>
@@ -161,8 +169,9 @@
       <button id="button7" class="button" value="7">7</button>
       <button id="button8" class="button" value="8">8</button>
       <button id="button9" class="button" value="9">9</button>
-       <button onclick="set()" >click</button>
+    </b>
+      
   </div>
 </div>
-  </body>
+</body>
 </html>
