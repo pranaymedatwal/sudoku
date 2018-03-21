@@ -1,8 +1,9 @@
 td {
   border: 2px solid dimgrey;
-  height: 50px;
-  width: 50px;
-  font-size: 30px;
+  height: 30px;
+  width: 30px;
+  font-size: 15px;
+  
 }
 .cellshow{
 	background-color: peachpuff;
@@ -11,18 +12,17 @@ td {
   }
 body
 {
-	background-image: url("task.jpeg");
+	background-image: url("dynamicsudoku.jpeg");
 	background-repeat: no-repeat;
 	background-size: cover;
 
 }
-button
-{
-	background-color: darkgrey;
-	height:30px;
-	width:40px;
+.button{
+	background-color:gray;
+	color:white;
 }
 .design
 {
 	background-color: grey;
 }
+

@@ -38,54 +38,52 @@ var length;
 var a1;
 $(document).ready(function(){
 
-$(".cell").click(function(){
+  $(".cell").click(function(){
   id1=$(this).attr("id");
   $(this).css("backgroundColor","cornsilk");
-});
-$(".cell").dblclick(function(){
+  });
+  $(".cell").dblclick(function(){
 	$(this).css("backgroundColor","");
 	});
-$(".button").click(function(){
+  $(".button").click(function(){
   x=$(this).val();//value of button
   flag=1;
   flag1=1;
-  flag2=1;
-  flag3=1;
   row();
   column();
   box();
   counter1();
   check();
   idofcell.push(id1);
-});
+  });
 });
 function row(){//row check
   if(jQuery.inArray(id1,idofcell)==-1)
   {
-   row1();
+   row1(check1);
   }
   else
   { 
-   row2();
+   row1(check2);
   }
 }
 function column()//column check
 {
   if(jQuery.inArray(id1,idofcell)==-1){
-   column1();
+   column1(check1);
    }
    else{
-   column2();
+   column1(check2);
    }
 }
 function box()//box check
 {
   if(jQuery.inArray(id1,idofcell)==-1){
-   box1();
+   box1(check1);
    }
    else
    {
-   box2();
+   box1(check2);
    }
 } 
 function counter1(){//game completed
@@ -109,7 +107,7 @@ else if(flag==0)
 }
 if(flagg==0)
 {
-  if(flag1==0||flag2==0||flag3==0)
+  if(flag1==0)
   {
   document.getElementById(id1).style.backgroundColor="red";
   document.getElementById(id1).innerHTML=x;
@@ -146,30 +144,7 @@ function check2(value)
    flag1=0;
     } 
 }
-function check3(value)
-{   flagg=0;
-   var z=document.getElementById(id1).textContent;
-   var x1=(jQuery.inArray(z,value));
-   value.splice(x1,1);
-   if(jQuery.inArray(x,value)==-1){
-    value.push(x);
-    }
-    else{
-    flag2=0;
-    }
-}
-function check4(value)
-{   flagg=0;
-  var z=document.getElementById(id1).textContent;
-  var x1=(jQuery.inArray(z,value));
-  value.splice(x1,1);
-  if(jQuery.inArray(x,value)==-1){
-    value.push(x);
-   }
-   else{
-    flag3=0;
-    }
-}
+
 function set()//randomly generating numbers 
 { 
 	start();
@@ -192,14 +167,15 @@ function set()//randomly generating numbers
 if(jQuery.inArray(id1,idrandom)==-1){
   idrandom.push(id1);
   flag=1;
-row1();
+row1(check1);
 if(flag!=0)
 {	
- column1();
+ column1(check1);
  if(flag!=0){
-  box1();
+  box1(check1);
   if(flag!=0)
-   {document.getElementById(id1).disable=true;
+   {
+   	document.getElementById(id1).disable=true;
    	document.getElementById(id1).className="cellshow";
     document.getElementById(id1).innerHTML=x;
     
@@ -208,15 +184,15 @@ if(flag!=0)
     {
      i--;
      idrandom.pop(id1);
-     row3();
-     column3();
+     row1(check5);
+     column1(check5);
     }         
   }
  else
  {
   i--;
   idrandom.pop(id1);
-  row3();
+  row1(check5);
  }
 }
  else{
@@ -228,316 +204,129 @@ if(flag!=0)
 length=idrandom.length;
 console.log(length);
 }
-function row1()
+function row1(check)
 {
   if(jQuery.inArray(id1,ids1)!=-1)
   {
-  check1(val1);
+  check(val1);
   }
   else
   if(jQuery.inArray(id1,ids2)!==-1)
   {
-  check1(val2);
+  check(val2);
   }
   else
   if(jQuery.inArray(id1,ids3)!==-1)
   {
-  check1(val3);
+  check(val3);
   }
   else
   if(jQuery.inArray(id1,ids4)!==-1)
   {
-  check1(val4);
+  check(val4);
   }
   else
   if(jQuery.inArray(id1,ids5)!==-1)
   {
-  check1(val5);
+  check(val5);
   }
   else
   if(jQuery.inArray(id1,ids6)!==-1)
   {
-  check1(val6);
+  check(val6);
   }
   else
   if(jQuery.inArray(id1,ids7)!==-1)
   {
-  check1(val7);
+  check(val7);
   }
   else
   if(jQuery.inArray(id1,ids8)!==-1)
   {
-  check1(val8);
+  check(val8);
   }
   else
   if(jQuery.inArray(id1,ids9)!==-1)
   {
-  check1(val9);
+  check(val9);
   }
 }
-function row2()
-{
-  if(jQuery.inArray(id1,ids1)!=-1){
-  check2(val1);
-  }
-  else
-  if(jQuery.inArray(id1,ids2)!=-1){
-  check2(val2);
-  }
-  else
-  if(jQuery.inArray(id1,ids3)!=-1){
-  check2(val3);
-  }
-  else
-  if(jQuery.inArray(id1,ids4)!=-1){
-  check2(val4);
-  }
-  else
-  if(jQuery.inArray(id1,ids5)!=-1){
-  check2(val5);
-  }
-  else
-  if(jQuery.inArray(id1,ids6)!=-1){
-  check2(val6);
-  }
-  else
-  if(jQuery.inArray(id1,ids7)!=-1){
-  check2(val7);
-  }
-  else
-  if(jQuery.inArray(id1,ids8)!=-1){
-  check2(val8);
-  }
-  else
-  if(jQuery.inArray(id1,ids9)!=-1){
-  check2(val9);
-  }
-}
-function column1()
+
+function column1(check)
 {
   if(jQuery.inArray(id1,idc1)!=-1){
-  check1(valc1);
+  check(valc1);
   }
   else
   if(jQuery.inArray(id1,idc2)!=-1){
-  check1(valc2);
+  check(valc2);
   }
   else
   if(jQuery.inArray(id1,idc3)!=-1){
-  check1(valc3);
+  check(valc3);
   }
   else
   if(jQuery.inArray(id1,idc4)!=-1){
-  check1(valc4);
+  check(valc4);
   }
   else
   if(jQuery.inArray(id1,idc5)!=-1){
-  check1(valc5);
+  check(valc5);
   }
   else
   if(jQuery.inArray(id1,idc6)!=-1){
-  check1(valc6);
+  check(valc6);
   }
   else
   if(jQuery.inArray(id1,idc7)!=-1){
-  check1(valc7)
+  check(valc7)
   }
   else
   if(jQuery.inArray(id1,idc8)!=-1){
-  check1(valc8);
+  check(valc8);
   }
   else
   if(jQuery.inArray(id1,idc9)!=-1){
-  check1(valc9);
+  check(valc9);
   }
 }
-function column2(){
-  if(jQuery.inArray(id1,idc1)!=-1){
-  check3(valc1);
-  }
-  else
-  if(jQuery.inArray(id1,idc2)!=-1){
-  check3(valc2);
-  }
-  else
-  if(jQuery.inArray(id1,idc3)!=-1){
-  check3(valc3);
-  }
-  else
-  if(jQuery.inArray(id1,idc4)!=-1){
-  check3(valc4);
-  }
-  else
-  if(jQuery.inArray(id1,idc5)!=-1){
-  check3(valc5);
-  }
-  else
-  if(jQuery.inArray(id1,idc6)!=-1){
-  check3(valc6);
-  }
-  else
-  if(jQuery.inArray(id1,idc7)!=-1){
-  check3(valc7);
-  }
-  else
-  if(jQuery.inArray(id1,idc8)!=-1){
-  check3(valc8);
-  }
-  else
-  if(jQuery.inArray(id1,idc9)!=-1){
-  check3(valc9);
-  }
-}
-function box1()
+
+function box1(check)
 {
   if(jQuery.inArray(id1,idb1)!=-1){
-  check1(valb1);
+  check(valb1);
   }
   else
   if(jQuery.inArray(id1,idb2)!=-1){
-  check1(valb2);
+  check(valb2);
   }
   else
   if(jQuery.inArray(id1,idb3)!=-1){
-  check1(valb3);
+  check(valb3);
   }
   else
   if(jQuery.inArray(id1,idb4)!=-1){
-  check1(valb4);
+  check(valb4);
   }
   else
   if(jQuery.inArray(id1,idb5)!=-1){
-  check1(valb5);
+  check(valb5);
   }
   else
   if(jQuery.inArray(id1,idb6)!=-1){
-  check1(valb6);
+  check(valb6);
   }
   else
   if(jQuery.inArray(id1,idb7)!=-1){
-  check1(valb7);
+  check(valb7);
   }
   else
   if(jQuery.inArray(id1,idb8)!=-1){
-  check1(valb8);
+  check(valb8);
   }
   else
   if(jQuery.inArray(id1,idb9)!=-1){
-  check1(valb9);
-  }
-}
-function box2()
-{
-  if(jQuery.inArray(id1,idb1)!=-1){
-  check4(valb1);
-  }
-  else
-  if(jQuery.inArray(id1,idb2)!=-1){
-  check4(valb2);
-  }
-  else
-  if(jQuery.inArray(id1,idb3)!=-1){
-  check4(valb3);
-  }
-  else
-  if(jQuery.inArray(id1,idb4)!=-1){
-  check4(valb4);
-  }
-  else
-  if(jQuery.inArray(id1,idb5)!=-1){
-  check4(valb5);
-  }
-  else
-  if(jQuery.inArray(id1,idb6)!=-1){
-  check4(valb6);
-  }
-  else
-  if(jQuery.inArray(id1,idb7)!=-1){
-  check4(valb7); 
-  }
-  else
-  if(jQuery.inArray(id1,idb8)!=-1){
-  check4(valb8);
-  }
-  else
-  if(jQuery.inArray(id1,idb9)!=-1){
-  check4(valb9);
-  }
-}
-function row3()
-{
-  if(jQuery.inArray(id1,ids1)!=-1){
-  check5(val1);
-  }
-  else
-  if(jQuery.inArray(id1,ids2)!=-1){
-  check5(val2);
-  }
-  else
-  if(jQuery.inArray(id1,ids3)!=-1){
-  check5(val3);
-  }
-  else
-  if(jQuery.inArray(id1,ids4)!=-1){
-  check5(val4);
-  }
-  else
-  if(jQuery.inArray(id1,ids5)!=-1){
-  check5(val5);
-  }
-  else
-  if(jQuery.inArray(id1,ids6)!=-1){
-  check5(val6);
-  }
-  else
-  if(jQuery.inArray(id1,ids7)!=-1){
-  check5(val7);
-  }
-  else
-  if(jQuery.inArray(id1,ids8)!=-1){
-  check5(val8);
-  }
-  else
-  if(jQuery.inArray(id1,ids9)!=-1){
-  check5(val9);
-  }
-}
-function column3()
-{
-  if(jQuery.inArray(id1,idc1)!=-1){
-  check5(valc1);
-  }
-  else
-  if(jQuery.inArray(id1,idc2)!=-1){
-  check5(valc2);
-  } 
-  else
-  if(jQuery.inArray(id1,idc3)!=-1){
-  check5(valc3); 
-  }
-  else
-  if(jQuery.inArray(id1,idc4)!=-1){
-  check5(valc4);
-  }
-  else
-  if(jQuery.inArray(id1,idc5)!=-1){
-  check5(valc5);
-  }
-  else
-  if(jQuery.inArray(id1,idc6)!=-1){
-  check5(valc6);
-  }
-  else
-  if(jQuery.inArray(id1,idc7)!=-1){
-  check5(valc7)
-  }
-  else
-  if(jQuery.inArray(id1,idc8)!=-1){
-  check5(valc8);
-  }
-  else
-  if(jQuery.inArray(id1,idc9)!=-1){
-  check5(valc9);
+  check(valb9);
   }
 }
 
@@ -570,9 +359,9 @@ function startTimer() {
 }
 
 function checkSecond(sec) {
-  if (sec < 10 && sec >= 0) {sec = "0" + sec}; 
-  if (sec < 0) {sec = "59"};
-  return sec;
-}
+		if (sec < 10 && sec >= 0) {sec = "0" + sec}; 
+		if (sec < 0) {sec = "59"};
+		return sec;
+		}
 }
 

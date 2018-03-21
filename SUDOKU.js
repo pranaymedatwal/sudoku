@@ -53,7 +53,7 @@ var valb6=["8","9","5","6","1"];
 var valb7=["5","2"];
 var valb8=["7","4","5"];
 var valb9=["6","4"];
-var flag=1,flag1=1,flag2=1,flag3=1,flagg;
+var flag=1,flag1=1,flagg;
 var x;//value
 var counter=0;
 var idofcell=[];
@@ -67,8 +67,6 @@ $(".button").click(function(){
   x=$(this).val();//value of button
   flag=1;
   flag1=1;
-  flag2=1;
-  flag3=1;
   row();
   column();
   box();
@@ -77,250 +75,161 @@ $(".button").click(function(){
   idofcell.push(id1);
   });
 });
-function row(){
-	if(jQuery.inArray(id1,idofcell)==-1)
-	{
-		if(jQuery.inArray(id1,ids1)!=-1)
-		{
-			check1(val1);
-		}
-		else
-			if(jQuery.inArray(id1,ids2)!==-1)
-			{
-				check1(val2);
-			}
-			else
-			if(jQuery.inArray(id1,ids3)!==-1)
-			{
-				check1(val3);
-			}
-			else
-			if(jQuery.inArray(id1,ids4)!==-1)
-			{
-				check1(val4);
-			}
-			else
-			if(jQuery.inArray(id1,ids5)!==-1)
-			{
-				check1(val5);
-			}
-			else
-			if(jQuery.inArray(id1,ids6)!==-1)
-			{
-				check1(val6);
-			}
-			else
-			if(jQuery.inArray(id1,ids7)!==-1)
-			{
-				check1(val7);
-			}
-			else
-			if(jQuery.inArray(id1,ids8)!==-1)
-			{
-				check1(val8);
-			}
-			else
-			if(jQuery.inArray(id1,ids9)!==-1)
-			{
-				check1(val9);
-			}
-	}
-else
-{ 
-if(jQuery.inArray(id1,ids1)!=-1){
-	check2(val1);
+function row(){//row check
+  if(jQuery.inArray(id1,idofcell)==-1)
+  {
+   row1(check1);
+  }
+  else
+  { 
+   row1(check2);
+  }
 }
-else
-if(jQuery.inArray(id1,ids2)!=-1){
-	check2(val2);
-}
-else
-if(jQuery.inArray(id1,ids3)!=-1){
-	check2(val3);
-}
-else
-if(jQuery.inArray(id1,ids4)!=-1){
-	check2(val4);
-}
-else
-if(jQuery.inArray(id1,ids5)!=-1){
-check2(val5);
-}
-else
-if(jQuery.inArray(id1,ids6)!=-1){
-	check2(val6);
-}
-else
-if(jQuery.inArray(id1,ids7)!=-1){
-	check2(val7);
-}
-else
-if(jQuery.inArray(id1,ids8)!=-1){
-	check2(val8);
-}
-else
-if(jQuery.inArray(id1,ids9)!=-1){
-	check2(val9);
-}
-}
-}
-function column()
+function column()//column check
 {
-if(jQuery.inArray(id1,idofcell)==-1){
-if(jQuery.inArray(id1,idc1)!=-1){
-check1(valc1);
+  if(jQuery.inArray(id1,idofcell)==-1){
+   column1(check1);
+   }
+   else{
+   column1(check2);
+   }
 }
-else
-if(jQuery.inArray(id1,idc2)!=-1){
-check1(valc2);
-}
-else
-if(jQuery.inArray(id1,idc3)!=-1){
-check1(valc3);
-}
-else
-if(jQuery.inArray(id1,idc4)!=-1){
-check1(valc4);
-}
-else
-if(jQuery.inArray(id1,idc5)!=-1){
-check1(valc5);
-}
-else
-if(jQuery.inArray(id1,idc6)!=-1){
-check1(valc6);
-}
-else
-if(jQuery.inArray(id1,idc7)!=-1){
-check1(valc7)
-}
-else
-if(jQuery.inArray(id1,idc8)!=-1){
-check1(valc8);
-}
-else
-if(jQuery.inArray(id1,idc9)!=-1){
-check1(valc9);
-}
-}
-
-else{
-	if(jQuery.inArray(id1,idc1)!=-1){
-	check3(valc1);
-}
-else
-if(jQuery.inArray(id1,idc2)!=-1){
-	check3(valc2);
-}
-else
-if(jQuery.inArray(id1,idc3)!=-1){
-	check3(valc3);
-}
-else
-if(jQuery.inArray(id1,idc4)!=-1){
-	check3(valc4);
-}
-else
-if(jQuery.inArray(id1,idc5)!=-1){
-check3(valc5);
-}
-else
-if(jQuery.inArray(id1,idc6)!=-1){
-	check3(valc6);
-}
-else
-if(jQuery.inArray(id1,idc7)!=-1){
-	check3(valc7);
-}
-else
-if(jQuery.inArray(id1,idc8)!=-1){
-	check3(valc8);
-}
-else
-if(jQuery.inArray(id1,idc9)!=-1){
-	check3(valc9);
-}
-}
-}
-function box()
+function box()//box check
 {
-	if(jQuery.inArray(id1,idofcell)==-1){
-if(jQuery.inArray(id1,idb1)!=-1){
-check1(valb1);
-}
-else
-if(jQuery.inArray(id1,idb2)!=-1){
-check1(valb2);
-}
-else
-if(jQuery.inArray(id1,idb3)!=-1){
-check1(valb3);
-}
-else
-if(jQuery.inArray(id1,idb4)!=-1){
-check1(valb4);
-}
-else
-if(jQuery.inArray(id1,idb5)!=-1){
-check1(valb5);
-}
-else
-if(jQuery.inArray(id1,idb6)!=-1){
-check1(valb6);
-}
-else
-if(jQuery.inArray(id1,idb7)!=-1){
-check1(valb7)
-}
-else
-if(jQuery.inArray(id1,idb8)!=-1){
-check1(valb8);
-}
-else
-if(jQuery.inArray(id1,idb9)!=-1){
-check1(valb9);
-}
-}
-else
-{
-		if(jQuery.inArray(id1,idb1)!=-1){
-	check4(valb1);
-}
-else
-if(jQuery.inArray(id1,idb2)!=-1){
-	check4(valb2);
-}
-else
-if(jQuery.inArray(id1,idb3)!=-1){
-	check4(valb3);
-}
-else
-if(jQuery.inArray(id1,idb4)!=-1){
-	check4(valb4);
-}
-else
-if(jQuery.inArray(id1,idb5)!=-1){
-check4(valb5);
-}
-else
-if(jQuery.inArray(id1,idb6)!=-1){
-	check4(valb6);
-}
-else
-if(jQuery.inArray(id1,idb7)!=-1){
-	check4(valb7);
-}
-else
-if(jQuery.inArray(id1,idb8)!=-1){
-	check4(valb8);
-}
-else
-if(jQuery.inArray(id1,idb9)!=-1){
-	check4(valb9);
-}
-
-}
+  if(jQuery.inArray(id1,idofcell)==-1){
+   box1(check1);
+   }
+   else
+   {
+   box1(check2);
+   }
 } 
+function row1(check)
+{
+  if(jQuery.inArray(id1,ids1)!=-1)
+  {
+  check(val1);
+  }
+  else
+  if(jQuery.inArray(id1,ids2)!==-1)
+  {
+  check(val2);
+  }
+  else
+  if(jQuery.inArray(id1,ids3)!==-1)
+  {
+  check(val3);
+  }
+  else
+  if(jQuery.inArray(id1,ids4)!==-1)
+  {
+  check(val4);
+  }
+  else
+  if(jQuery.inArray(id1,ids5)!==-1)
+  {
+  check(val5);
+  }
+  else
+  if(jQuery.inArray(id1,ids6)!==-1)
+  {
+  check(val6);
+  }
+  else
+  if(jQuery.inArray(id1,ids7)!==-1)
+  {
+  check(val7);
+  }
+  else
+  if(jQuery.inArray(id1,ids8)!==-1)
+  {
+  check(val8);
+  }
+  else
+  if(jQuery.inArray(id1,ids9)!==-1)
+  {
+  check(val9);
+  }
+}
+
+function column1(check)
+{
+  if(jQuery.inArray(id1,idc1)!=-1){
+  check(valc1);
+  }
+  else
+  if(jQuery.inArray(id1,idc2)!=-1){
+  check(valc2);
+  }
+  else
+  if(jQuery.inArray(id1,idc3)!=-1){
+  check(valc3);
+  }
+  else
+  if(jQuery.inArray(id1,idc4)!=-1){
+  check(valc4);
+  }
+  else
+  if(jQuery.inArray(id1,idc5)!=-1){
+  check(valc5);
+  }
+  else
+  if(jQuery.inArray(id1,idc6)!=-1){
+  check(valc6);
+  }
+  else
+  if(jQuery.inArray(id1,idc7)!=-1){
+  check(valc7)
+  }
+  else
+  if(jQuery.inArray(id1,idc8)!=-1){
+  check(valc8);
+  }
+  else
+  if(jQuery.inArray(id1,idc9)!=-1){
+  check(valc9);
+  }
+}
+
+function box1(check)
+{
+  if(jQuery.inArray(id1,idb1)!=-1){
+  check(valb1);
+  }
+  else
+  if(jQuery.inArray(id1,idb2)!=-1){
+  check(valb2);
+  }
+  else
+  if(jQuery.inArray(id1,idb3)!=-1){
+  check(valb3);
+  }
+  else
+  if(jQuery.inArray(id1,idb4)!=-1){
+  check(valb4);
+  }
+  else
+  if(jQuery.inArray(id1,idb5)!=-1){
+  check(valb5);
+  }
+  else
+  if(jQuery.inArray(id1,idb6)!=-1){
+  check(valb6);
+  }
+  else
+  if(jQuery.inArray(id1,idb7)!=-1){
+  check(valb7);
+  }
+  else
+  if(jQuery.inArray(id1,idb8)!=-1){
+  check(valb8);
+  }
+  else
+  if(jQuery.inArray(id1,idb9)!=-1){
+  check(valb9);
+  }
+}
+
 function counter1(){
 	
 if(counter>80)
@@ -343,7 +252,7 @@ document.getElementById(id1).innerHTML=x;
 }
 if(flagg==0){
  
-	if(flag1==0||flag2==0||flag3==0)
+	if(flag1==0)
 {
 	document.getElementById(id1).style.backgroundColor="red";
 document.getElementById(id1).innerHTML=x;
@@ -378,28 +287,4 @@ function check2(value)
   }
   else{
   	flag1=0;
-}}
-function check3(value)
-{   flagg=0;
-	var z=document.getElementById(id1).textContent;
-	var x1=(jQuery.inArray(z,value));
-	value.splice(x1,1);
-	if(jQuery.inArray(x,value)==-1){
-  	value.push(x);
-  	
-  }
-  else{
-  	flag2=0;
-}}
-function check4(value)
-{   flagg=0;
-	var z=document.getElementById(id1).textContent;
-	var x1=(jQuery.inArray(z,value));
-	value.splice(x1,1);
-	if(jQuery.inArray(x,value)==-1){
-  	value.push(x);
-  	
-  }
-  else{
-  	flag3=0;
 }}
